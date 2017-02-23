@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Population</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    function getData(){
+        var cityinput=document.getElementById("city");
+        var src="https://yuyuanhey.github.io/where-is-my-uncle/index.html";
+        // var arg="city="+cityinput.value;
+        var arg = "city=taipei";
+//================= Ajax ================
+        var req = new XMLHttpRequest();
+        req.open("post", src);//(設定連線的方法,網址)
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        req.onload = function(){ //連線完成，觸發load事件
+            //進行連線後的工作
+            var result = document.getElementById("result");
+            result.innerHTML=this.responseText;
+        };
+        req.send(arg /*request body*/);//送出連線
+    }
+    </script>
+</head>
+<body>
+    <h3>City Population</h3>
+    <div>
+        City<input type="text" id="city"/>  
+        <input type="button" value="Get" onclick="getData();"/>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
+

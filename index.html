@@ -79,4 +79,23 @@
         console.log(print);
     }
 </script>
+
+<?php
+    $city=$_REQUEST["city"];
+    if($city == "taipei"){
+        echo "300 wan";
+    }
+    else if($city == "hsinchu"){
+        echo "30 wan";
+    }
+    else{
+        echo "No Data";
+    }
+    /*
+    http://localhost:8080/hello.php?city=Taipei(城市名)
+    所以$city取出網址中city的value
+
+    */
+?>
+
 </html>
