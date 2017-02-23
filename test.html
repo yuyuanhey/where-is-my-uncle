@@ -11,7 +11,7 @@
         // var arg="city="+cityinput.value;
         var arg = "city=taipei";
 //================= Ajax ================
-    $(document).ready(function() {
+    // $(document).ready(function() {
         $.ajax({
         type: "POST",
         url: src,
@@ -22,7 +22,8 @@
           $('#result').html(msg);
          }
         });
-    });
+    // });
+}
     //     jQuery.support.cors = true;
     //     var req = new XMLHttpRequest();
     //     req.open("post", src);//(設定連線的方法,網址)
