@@ -10,7 +10,7 @@
 <script>
     var i, split;
     var lat, lng;
-    var url = "https://api.darksky.net/forecast/d7a41975c56dc7ca6fb665df24d9f535/";
+    var myurl = "https://api.darksky.net/forecast/d7a41975c56dc7ca6fb665df24d9f535/";
     function trans() {
         i = 0;
         $("#target").val("");
@@ -28,10 +28,28 @@
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
                 $("#target").html( lat + "," + lng );
-                url += (lat +"," + lng);
-                // console.log(url);
-                // output(url);
-                console.log(url);
+                myurl += (lat +"," + lng);
+
+                $.ajax({
+                    type: 'GET',
+                    url: myurl,
+                    dataType: 'jsonp',
+                    contentType: "application/json",
+                    // data: myurl,
+                    success: function(data){
+                        //完成之後的callback，data為上面的值
+                        console.log(data);
+                        var now = Date.now() / 1000;
+                        var temp = data.hourly.data[0].time;
+                        $("#target").append("<div>" + now + "</div>");
+                        $("#target").append("<div>" + temp + "</div>");
+                        $("#target").append("<div>" + (now - temp) + "</div>");
+                    },
+                    error: function(e) {
+                        alert('Ajax request 發生錯誤');
+                    },
+                });
+                console.log(myurl);
             } else {
                 var content = $("#target").val();
                 $("#target").html("查無經緯度" + "\n");
