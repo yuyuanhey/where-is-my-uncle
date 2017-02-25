@@ -23,9 +23,11 @@ function trytry() {
     // });
     $.ajax({
         type: 'POST',
-        url: 'saveAns.php',
+        url: 'https://yuyuanhey.github.io/where-is-my-uncle/saveAns.php',
         data: {ifrain:rain},
+        crossDomain:true,
         success: function(data){
+            alert('Ajax request 成功');
         },
         error: function(e) {
             alert('Ajax request 發生錯誤');
