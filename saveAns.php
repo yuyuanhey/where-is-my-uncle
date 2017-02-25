@@ -1,4 +1,5 @@
 <?php
+	header('Access-Control-Allow-Origin: *');
 	// receive the ans that whether it will rain
 	$ans  = $_POST["ifrain"];
 	// $json is now a string
