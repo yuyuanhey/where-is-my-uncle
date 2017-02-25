@@ -17,9 +17,19 @@ var n = d.getDay(); // to get which day is today
 var rain = true;
 
 function trytry() {
-    $.post('saveAns.php',{
-            ifrain: rain
-        }, function(txt){ // do nothing
+    // $.post('saveAns.php',{
+    //         ifrain: rain
+    //     }, function(txt){ // do nothing
+    // });
+    $.ajax({
+        type: 'POST',
+        url: 'saveAns.php',
+        data: {ifrain:rain},
+        success: function(data){
+        },
+        error: function(e) {
+            alert('Ajax request 發生錯誤');
+        },
     });
 }
 trytry();
@@ -98,4 +108,3 @@ function addressToLatLng(addr) {
     // var url = "https://api.darksky.net/forecast/d7a41975c56dc7ca6fb665df24d9f535/"+ lat +"," + lng;
     // console.log(url);
 }
-
