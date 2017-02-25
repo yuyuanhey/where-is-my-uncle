@@ -14,7 +14,7 @@ var n = d.getDay(); // to get which day is today
 // weekday[5] = "fri";
 // weekday[6] = "sat";
 // var n = weekday[d.getDay()];
-var rain = false;
+var rain = "false";
 
 function trytry() {
     // $.post('saveAns.php',{
@@ -25,10 +25,10 @@ function trytry() {
         type: 'POST',
         url: 'saveAns.php',
         // url: 'saveAns.php?callback=?',
-        data: {ifrain:rain},
+        data: {"ifrain":rain},
         // dataType:"json",
         // crossDomain:true,
-        // contentType: "application/json",
+        contentType: "application/json",
         success: function(data){
             alert('Ajax request 成功');
         },
