@@ -16,30 +16,11 @@ var n = d.getDay(); // to get which day is today
 // var n = weekday[d.getDay()];
 var rain = true;
 
-function issuccess(){
-    $.getJSON('ans.json', function(data){
-        console.log(data);
-    });
-}
-
 function trytry() {
-    $.post('test.php',{
+    $.post('saveAns.php',{
             ifrain: rain
-        }, function(txt){
-            issuccess();
+        }, function(txt){ // do nothing
     });
-    // $.ajax({
-    //     url: "test.php",
-    //     data: {ifrain:rain},
-    //     type:"POST",
-    //     dataType:'text',
-    //     success: function(){
-    //         console.log("success");
-    //     },
-    //      error:function(){ 
-    //        console.log("fail");
-    //      }
-    // });
 }
 trytry();
 
@@ -117,18 +98,4 @@ function addressToLatLng(addr) {
     // var url = "https://api.darksky.net/forecast/d7a41975c56dc7ca6fb665df24d9f535/"+ lat +"," + lng;
     // console.log(url);
 }
-function getData(){
 
-     $.getJSON("data.json", function(result){
-        $.each(result, function(i){
-            $("#test").append("<div id='" + i + "' class='week'>"
-                            +  "<div style='text-align:center'>" + this.ch + "</div>"
-                            +  "<input type='text' class'home' value='" + this.home + "'/>"
-                            +  "<input type='text' class'dest' value='" + this.dest + "'/>"
-                            +  "<input type='datetime-local' class='start' value='" + this.start + "'/>"
-                            +  "<input type='datetime-local' class='end' value='" + this.end + "'/>"
-                            + "</div>");
-        });
-    });
-}
-// getData();
