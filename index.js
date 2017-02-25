@@ -28,7 +28,7 @@ function trytry() {
         data: {"ifrain":rain},
         // dataType:"json",
         // crossDomain:true,
-        contentType: "application/json",
+        // contentType: "application/json",
         success: function(data){
             alert('Ajax request 成功');
         },
