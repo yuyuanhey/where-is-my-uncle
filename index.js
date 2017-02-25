@@ -17,25 +17,25 @@ var n = d.getDay(); // to get which day is today
 var rain = false;
 
 function trytry() {
-    $.post('saveAns.php',{
-            ifrain: rain
-        }, function(txt){ // do nothing
-    });
-    // $.ajax({
-    //     type: 'POST',
-    //     url: 'getAns.php',
-    //     // url: 'saveAns.php?callback=?',
-    //     data: {ifrain:rain},
-    //     // dataType:"json",
-    //     // crossDomain:true,
-    //     // contentType: "application/json",
-    //     success: function(data){
-    //         alert('Ajax request 成功');
-    //     },
-    //     error: function(e) {
-    //         alert('Ajax request 發生錯誤');
-    //     },
+    // $.post('saveAns.php',{
+    //         ifrain: rain
+    //     }, function(txt){ // do nothing
     // });
+    $.ajax({
+        type: 'POST',
+        url: 'saveAns.php',
+        // url: 'saveAns.php?callback=?',
+        data: {ifrain:rain},
+        // dataType:"json",
+        // crossDomain:true,
+        // contentType: "application/json",
+        success: function(data){
+            alert('Ajax request 成功');
+        },
+        error: function(e) {
+            alert('Ajax request 發生錯誤');
+        },
+    });
 }
 trytry();
 
