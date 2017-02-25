@@ -6,9 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeEvk0QfpazTPlMzgbCL2sBRRjQjOyaQ"
   type="text/javascript"></script>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
 <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    $("head").append("<script src='index.js'>< /script>");
+</script>
 <style>
 body{
     font-family: Microsoft JhengHei;
@@ -86,34 +89,8 @@ body{
 </style>
 <body>  
         <h1 style="text-align:center;margin-bottom:10px">Smart Umbrella!</h1>
-		<!-- <div>請輸入地址:</div>
-		<input name="addr" id="source" value="台北市信義區市府路1號" />
-        <div>請輸入時間:</div>
-        <input type="datetime-local" id="time" /> -->
-        <!-- onclick="trans();" -->
-        <!-- <input type="button" value="CHANGE" id="btn"> -->
-        <!-- <div id="target"></div> -->
         <div id="test">
-            <div id="title" class="week">
-                <!-- <div>　</div>
-                <div>出發地</div>
-                <div>目的地</div>
-                <div>出發時間</div>
-                <div>折返時間</div> -->
-                <!-- <div>test</div> -->
-                <!-- <input type="text" value="出發地" readonly>
-                <input type="text" value="目的地" readonly>
-                <input type="text" value="出發時間" readonly>
-                <input type="text" value="折返時間" readonly> -->
-            </div>
-            <!-- <div id="sun" class="week">
-                <div>禮拜日</div>
-                <input type="text" class="home" value="禮拜日出發點" />
-                <input type="text" class="dest" value="禮拜日終點" />
-                <input type="datetime-local" class="start" value="0" />
-                <input type="datetime-local" class="end" value="0" />
-            </div>-->
-
+            <div id="title" class="week"></div>
         </div>
         <div id="btn">REVISE</div>
 </body>
@@ -133,5 +110,8 @@ body{
     });
 }
 getData();
+$("#btn").on("click", function(){
+    console.log("hi");
+});
 </script>
 </html>
