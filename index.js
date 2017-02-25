@@ -14,7 +14,7 @@ var n = d.getDay(); // to get which day is today
 // weekday[5] = "fri";
 // weekday[6] = "sat";
 // var n = weekday[d.getDay()];
-var rain = "false";
+var rain = false;
 
 function trytry() {
     // $.post('saveAns.php',{
@@ -23,7 +23,7 @@ function trytry() {
     // });
     $.ajax({
         type: 'POST',
-        url: 'saveAns.php',
+        url: 'https://yuyuanhey.github.io/where-is-my-uncle/saveAns.php?callback='+rain,
         // url: 'saveAns.php?callback=?',
         data: {"ifrain":rain},
         // dataType:"json",
