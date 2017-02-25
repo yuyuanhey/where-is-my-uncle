@@ -14,7 +14,7 @@ var n = d.getDay(); // to get which day is today
 // weekday[5] = "fri";
 // weekday[6] = "sat";
 // var n = weekday[d.getDay()];
-var rain = true;
+var rain = false;
 
 function trytry() {
     // $.post('saveAns.php',{
@@ -23,9 +23,12 @@ function trytry() {
     // });
     $.ajax({
         type: 'POST',
-        url: 'https://yuyuanhey.github.io/where-is-my-uncle/saveAns.php',
+        url: 'https://yuyuanhey.github.io/where-is-my-uncle/getAns.php',
+        // url: 'saveAns.php?callback=?',
         data: {ifrain:rain},
-        crossDomain:true,
+        dataType:"json",
+        // crossDomain:true,
+        contentType: "application/json",
         success: function(data){
             alert('Ajax request 成功');
         },
