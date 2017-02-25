@@ -23,7 +23,7 @@ function trytry() {
     // });
     $.ajax({
         type: 'POST',
-        url: 'https://yuyuanhey.github.io/where-is-my-uncle/saveAns.php?callback='+rain,
+        url: 'saveAns.php',
         // url: 'saveAns.php?callback=?',
         data: {"ifrain":rain},
         // dataType:"json",
