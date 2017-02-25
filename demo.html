@@ -5,41 +5,65 @@
     <title>Demo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeEvk0QfpazTPlMzgbCL2sBRRjQjOyaQ" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Sansita|Supermercado+One" rel="stylesheet">
 </head>
 <style>
 body{
-    font-family: Microsoft JhengHei;
+    font-family: 'Sansita', Microsoft JhengHei;
     font-size:20px;
-    color:#5A5959;
+    color:#625772;
+    background:#FFF4E1;
 }
 input{
-    font-family: Microsoft JhengHei;
+    font-family: 'Sansita', Microsoft JhengHei;
     font-size:20px;
     width:30vw;
     margin:5px 0px 0px 0px;
     height:50px;
 }
+input:focus{
+    outline:none;
+    border:2px solid #F38181;
+}
 div{
     text-align: center;
 }
 #btn{
-    width:200px;
-    background:pink;
-    padding:7px;
-    font-size:28px;
-    margin:auto;
-    margin-top:30px;
+    background:#9DDCDC;
+    color:#5A5959;
+    width:180px;
+    text-align:center;
+    margin:50px 0px 0px 43%;
+    /*margin-top:25px;*/
+    padding: 5px 5px;
+    font-size:30px;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow: 0 7px #999;
+    border:none;
+}
+
+#btn:hover{
+    background:#A9EEE6;
+}
+#btn:active{
+    background-color: #1F8EA3;
+    color:#FFFAF4;
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+    opacity: 0.8;
 }
 .label{
     display:inline-block;
-    margin:25px 10px 25px 30%;
-    /*font-size: 24px;*/
+    margin:25px 10px 25px 27%;
+    font-weight:600;
+    font-size: 24px;
     /*background:pink;*/
 }
 </style>
 <body>
 <!-- php echo $_SERVER['PHP_SELF'];  -->
-<h1 style="text-align:center;margin-bottom:10px">Smart Umbrella!</h1>
+<div style="text-align:center;margin-bottom:50px;font-size:48px;font-weight:600;letter-spacing:5px">Smart Umbrella!</div>
     <form method="post" action="demo.php">
         <div class="label">請輸入地點:</div>
         <input type="text" name="addr" id="addr" value="三創"/><br>
