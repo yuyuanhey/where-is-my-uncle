@@ -1,0 +1,24 @@
+body{
+	font-family: Microsoft JhengHei;
+	font-size:14px;
+}
+.week{
+	width:12vw;
+	display:inline-table;
+}
+.week input, .week div{
+	width:inherit;
+	display:block;
+	/*text-align:center;*/
+	font-size: 16px;
+	/*height:30px !important;*/
+	/*border: none;*/
+}
+.week input{
+
+}
+#title{
+	width:auto;
+	line-height:25px;
+	margin-left:20px;
+}
